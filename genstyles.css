@@ -1,0 +1,84 @@
+/* YOUR STYLES HERE */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#menu {
+    padding: 5px 10px;
+    display: flex;
+}
+
+.menu-item{
+    font-size: 14px;
+    color: black;
+    margin: 0px 10px;
+    text-decoration: none;
+}
+
+.menu-item:hover {
+    text-decoration: underline;
+}
+
+#profile-pic {
+    height: 32px;
+    width: 32px;
+    border-radius: 16px;
+}
+
+#profile-pic:hover {
+    box-shadow: 0px 0px 5px #C2C2C2;
+}
+
+#store-link {
+    margin-right: auto;
+}
+
+#search {
+    margin-top: 120px;
+    text-align: center;
+}
+
+#main-logo {
+    width: 272px;
+}
+
+#search-bar {
+    height: 34px;
+    font-size: 17px;
+    border-radius: 17px;
+
+    border: 1px solid #C2C2C2;
+    width: 90%;
+    max-width: 500px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 30px;
+}
+
+#search-bar:hover, 
+#search-bar:focus {
+    box-shadow: 0px 0px 5px #C2C2C2;
+}
+
+#search-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+
+.search-button {
+    margin: 8px;
+    padding: 8px 15px;
+    cursor: pointer;
+
+    background-color: #f8f9fa;
+    border: 1px solid #4b4b4b;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.search-button:hover {
+    box-shadow: 0px 0px 5px #C2C2C2;
+}
