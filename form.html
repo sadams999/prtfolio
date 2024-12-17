@@ -1,0 +1,123 @@
+<html>
+    <head>
+        <title>Soncera Adams</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+            <form action="results.html" method="get">
+                <div id="titlediv" style="position: relative; margin-left: 32%; display: flex; gap: 0.1rem; align-items: baseline;">
+                    <h1>Which</h1>
+                    <h2> Valorant </h2>
+                    <h1>Baddie Are You?</h1>
+                </div>
+            <div id="bigDiv">  
+                <div id = 'color'>                   
+                    <p>What's Your Favorite Color?</p>  
+                    <label for="color"></label>
+                    <select id="color" name="color" required>
+                        <option value="black">Black</option>
+                        <option value="orange">Orange</option>
+                        <option value="yellow">Yellow</option>
+                        <option value="green">Green</option>
+                        <option value="blue">Blue</option>
+                        <option value="purple">Purple/Pink</option>
+                    </select>
+                    
+                    <!--<input type="radio" id="black" name="color" value="black">
+                    <label for="black">Black</label>
+
+                    <input type="radio" id="orange" name="color" value="orange">
+                    <label for="orange">Orange</label>
+
+                    <input type="radio" id="yellow" name="color" value="yellow">
+                    <label for="yellow">Yellow</label>
+
+                    <input type="radio" id="green" name="color" value="green">
+                    <label for="green">Green</label>
+
+                    <input type="radio" id="blue" name="color" value="blue">
+                    <label for="blue">Blue</label>
+
+                    <input type="radio" id="purple" name="color" value="purple">
+                    <label for="purple">Purple/Pink</label>-->
+                </div>
+                
+                <div id="screentime">
+                    <label for="amount">What's your average daily screentime? </label>
+                    <input type="number" id="amount" name ="amount" step="1"> 
+                </div>
+
+                <div>
+                    <p>How do you like to tackle problems?</p>
+                    <input type="radio" id="jumpin" name="learningStyle" value="jumpin" required>
+                    <label for="jumpin">Jump in an learn as you go.</label>
+
+                    <input type="radio" id="observe" name="learningStyle" value="observe">
+                    <label for="observe">Observe from afar and study the situation before taking next steps.</label>
+
+                    <input type="radio" id="depends" name="learningStyle" value="depends">
+                    <label for="depends">Depends.</label>
+                </div>
+
+                <div>
+                    <p>Out of these choices, what's your most favorite food?</p>
+
+                    <input type="radio" id="empanadas" name="food" value="empanadas" required>
+                    <label for="empanadas">Empanadas</label>
+
+                    <input type="radio" id="hotpot" name="food" value="hotpot">
+                    <label for="hotpot">Hotpot</label>
+
+                    <input type="radio" id="burgers" name="food" value="burgers">
+                    <label for="burgers">Burgers</label>
+
+                    <input type="radio" id="kebab" name="food" value="kebab">
+                    <label for="kebab">Kebab</label>
+
+                    <input type="radio" id="jollof" name="food" value="jollof">
+                    <label for="jollof">Jollof Rice</label>
+
+                    <input type="radio" id="adobo" name="food" value="adobo">
+                    <label for="adobo">Adobo</label>
+
+                    <input type="radio" id="pretzels" name="food" value="pretzels">
+                    <label for="pretzels">Pretzels</label>
+
+                    <input type="radio" id="vegan" name="food" value="vegan">
+                    <label for="vegan">I'm Vegan</label>
+
+                    
+
+
+                </div>
+                
+                <div>
+                    <p>Which choice best describes your perfect weekend?</p>
+
+                    <input type="radio" id="calm" name="weekend" value="calm" required>
+                    <label for="calm">Curling up with a book, taking time for yourself, meditating, etc.</label>
+
+                    <input type="radio" id="tinkering" name="weekend" value="tinkering">
+                    <label for="tinkering">Working on your hobbies; specifically crafting/making things.. art, software, or hardware</label>
+
+                    <input type="radio" id="active" name="weekend" value="active">
+                    <label for="active">Playing sports, working out, staying active</label>
+
+                    <input type="radio" id="pets" name="weekend" value="pets">
+                    <label for="pets">Hanging with your furbabies :3</label>
+                    
+                    <input type="radio" id="gaming" name="weekend" value="gaming">
+                    <label for="gaming">gaming 24hrs nonstop.</label>
+
+                    <input type="radio" id="sister" name="weekend" value="sister">
+                    <label for="sister">Working to avenge the death of your little sister.</label>
+
+                </div>
+
+                <div>
+                    <input id="submit-btn" type="submit" value="SUBMIT">
+                </div>
+            </div>
+            </form>
+    </body>
+</html>
