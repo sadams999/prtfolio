@@ -32,6 +32,6 @@ function get_random_image(){
     selected_image2 = icon_array[random_index2]
 
 
-    document.getElementById('banner_pic').src = `./banner_img/${selected_image}`
-    document.getElementById('icon_pic').src = `./icon_img/${selected_image2}`
+    document.getElementById('banner_pic').src = `${selected_image}`
+    document.getElementById('icon_pic').src = `${selected_image2}`
 }
