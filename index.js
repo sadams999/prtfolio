@@ -29,14 +29,14 @@ function determineAgent() {
     if (weekend == "sister") {  
         agent = 'REYNA';
         pgraph = "Despite her tough exterior, Reyna holds a great burden. Her little sister's life\n was taken in a cruel experiment. On weekends,\nThere's no way Reyna can be at peace without working to find a way to bring her sister back.";
-        image = 'images/reyna.png'; 
+        image = 'reyna.png'; 
         return;
     }
 
     else if (weekend == "pets") {  
         agent = 'SKYE';
         pgraph = "You're just like Skye! Hailing from Australia, she's a huge animal lover with a green thumb!";
-        image = 'images/skye.webp'; 
+        image = 'skye.webp'; 
         return;
     }
 
