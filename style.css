@@ -1,0 +1,307 @@
+@font-face {
+    font-family: inter;
+    src: url(Inter_18pt-Light.ttf);
+  }
+
+  @font-face {
+    font-family: interbold;
+    src: url(Inter_24pt-Bold.ttf);
+  }
+  
+body{
+    background-color: #F5F4F0
+}
+
+#JUMBO {
+    column-count: 2;
+    display: flex;
+    gap: 0px; /* Adds 20px of space between flex items */
+  }
+  .flex-grid-thirds .col {
+    width: 32%;
+  }
+
+#leftside {
+    margin-top: 40px;
+    color: black;
+    width: 600px;
+    margin-left: 90px;
+}
+
+#greeting {
+    font-family: interbold;
+    display: flex;
+    margin-top: 0px;
+    font-size: 24px;
+}
+
+#title1 {
+    font-family: interbold;
+    margin-bottom: 6px;
+    font-size: 24px;
+    color: #7b7a78;
+}
+
+.line1 {
+    margin-bottom: 0px;
+}
+
+.line2 {
+    margin-top: 0px;
+    margin-bottom: 0%;
+}
+#title2 {
+    font-family: interbold;
+    margin-top: 0px;
+    font-size: 24px;
+    color: #7b7a78;
+}
+
+#title3 {
+    font-family: interbold;
+    padding-left: 10px;
+    margin-top: 0px;
+    color: #645C96;
+}
+
+#title4 {
+    font-family: interbold;
+    padding-left: 7px;
+    margin-top: 0px;
+    color: #645C96;
+}
+
+#bio{
+    margin-top: 10px;
+    margin-bottom: 45px;
+    font-family: inter;
+}
+
+#click{
+    margin-bottom: 45px;
+    font-family: interbold;
+}
+
+.circle{
+    position: absolute;
+    width: 500px;
+    top: 293px;
+    left: 40px;
+}
+
+#ctitle{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-family: inter;
+    border-bottom: 1px solid #000;
+    padding-bottom: 3px;
+    width: 95px;
+}
+
+#number{
+    display: flex;
+    align-items: center;
+}
+
+#email{
+    display: flex;
+    align-items: center;
+}
+
+#linkedin{
+    display: flex;
+    align-items: center;
+}
+
+.icon{
+    width: 25px;
+    height: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.txt{
+    padding-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: inter;
+}
+
+#rightside {
+    color: black;
+    width: 700px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 170px;
+    }
+    .flex-grid-thirds .col {
+        width: 32%;
+      }
+
+#row1 {
+    display: flex;
+    flex-wrap: wrap;
+    height: 200px;
+    width: 650px;
+    justify-content: center;
+    gap: 30px; /* Adds 20px of space between flex items */
+    align-items: center;
+    
+
+}
+
+#row2 {
+    display: flex;
+    flex-wrap: wrap;
+    height: 200px;
+    width: 650px;
+    justify-content: center;
+    gap: 30px; /* Adds 20px of space between flex items */
+    align-items: center;
+    
+}
+    
+.pblock {
+    background-color: #adadad;
+    height: 220px;
+    width: 300px;
+    border-radius: 23px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.pblock:hover img {
+    opacity: 0.1;
+  }
+
+.middle {
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    --mstransform: translate(-50%, -50%);
+    text-align: center;
+    font-family: interbold;
+    color: black;
+    transition: 1s ease-in .0s ease-out;
+}
+
+#middlecvr {
+    background-color:#F5F4F0 ;
+}
+
+.pblock:hover .middle {
+    opacity: 2;
+    position: absolute;
+    overflow: hidden;
+  }
+
+.pblock:hover .text {
+    opacity: 1;
+  }
+
+  
+.pblock img {
+    object-fit: cover;
+    overflow: hidden;
+    width: 300px;
+    height: 220px;
+    border-radius: 23px;
+    transition: .5s ease-in-out;
+}
+
+.pblock:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transform: scale(1.2);
+    /*animation: shaking 0.3s linear 2;*/
+}
+/*@keyframes shaking {
+    0%, 50%, 100% {
+        transform: rotate(0deg);
+    }
+    20% {
+        transform: rotate(-5deg);
+    }
+    70% {
+        transform: rotate(5deg);
+    }
+}
+
+
+/*@media screen and (max-width: 800px) {
+    #JUMBO {
+      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+
+
+@media screen and (max-width: 1300px) {
+    .circle{
+        position: absolute;
+        width: 500px;
+        top: 320px;
+        left: 25px;
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+    #JUMBO {
+      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+      flex-direction: column;
+      align-items: center;
+      
+    }
+
+    #rightside {
+        width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+        flex-direction: column;
+        margin-top: 140px;
+    }
+
+    #leftside {
+        margin-left: 50px;
+    }
+
+    #click{
+        position: absolute;
+        margin-top: 220px;
+        font-family: interbold;
+        text-align: center;
+        padding-left: 12%;
+    }
+    .circle{
+        position: absolute;
+        width: 500px;
+        top: -10px;
+        left: 25px;
+    }
+
+
+}
+
+@media screen and (max-width: 400px) {
+    #JUMBO {
+      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+      flex-direction: column;
+    }
+
+    #rightside {
+        width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    #row1 {
+        width: 500px; /* The width is 100%, when the viewport is 800px or smaller */
+        flex-direction: column;
+    }
+
+    #row2 {
+        width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+        flex-direction: column;
+    }
+
+}
