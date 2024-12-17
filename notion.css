@@ -1,0 +1,157 @@
+body, html {
+    background: #F5F5F5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#bgDiv {
+    background-color: #FCFDFF;
+    color:black;
+    height: 2000px;
+    width: 1000px;
+    padding: 0px;
+}
+
+p{
+    font-size: 60px; 
+    margin-left: 85px;
+    margin-bottom: 0px;
+    margin-top: 60px;
+    padding-top: 60px;
+}
+#iconDiv {
+    background-color: rgba(0,0,0,0.0);
+    position: absolute;
+    color: black;
+    float: none;
+    margin-top: 125px;
+    margin-left: 75px;
+    height: 150px;
+    width: 150px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10; /* Ensure it appears above the banner */
+
+    
+}
+
+#icon_pic {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+#bannerDiv{
+    background-color: #9A9A9A;
+    height: 200px;
+    width: 1000px;
+    position: relative;
+}
+
+#quoteDiv{
+    background-color:#E0E1E3 ;
+    height: 60px;
+    color: black;
+    margin-left: 80px;
+    margin-top: 0px;
+    width: 800px;
+    
+}
+
+#banner_pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+#lineDivider{
+    margin: 0px;
+    margin-top: 30px;
+    position: absolute;
+    margin-left: 75px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    stroke: black;
+    stroke-width: 15px;
+}
+
+h2{
+    margin: 7px;
+    padding-top: 20px;
+    padding-left: 30px;
+    font-size: 17px;
+}
+
+#spotTable{
+    display: grid;
+    justify-items: start;
+    justify-content: space-between;
+}
+#spotifyDiv{
+    background-color:#9A9A9A ;
+    float: left;
+    position: absolute;
+    color: black;
+    margin-left: 75px;
+    height: 400px;
+    width: 200px;
+    margin-right: none;
+    margin-top: 90px;
+    border-radius: 20px ;
+}
+
+#tableDiv{
+    background-color: orange;
+    float: right;
+    position: absolute;
+    margin-right: 75px;
+    height: 400px;
+    width: 600px;
+    margin-top: 90px;
+    margin-left: 330px;
+}
+
+#calendar{
+    width: 100%;
+    height: 100%;
+}
+
+#buttonDiv{
+    background-color: rgba(0,0,0,0.0);
+    width: 400px;
+    height: 50px;
+    float: right;
+    margin-right: 300px;
+    margin-top: 40px;
+    margin-left: 80px;
+    display: flex;
+    justify-content: center;
+
+}
+
+#button1{
+    width: 200px;
+    height: 50px;
+    border: 0px;
+    border-radius: 10px;
+    margin-left: 0px;
+}
+
+#button2{
+    width: 150px;
+    height: 50px;
+    border: 0px;
+    border-radius: 10px;
+    float: left;
+    position: relative;
+    margin-left: 40px;
+}
+
+.button:hover, 
+.buttion:focus {
+    box-shadow: 0px 0px 5px #C2C2C2;
+
+}
