@@ -291,17 +291,19 @@ body{
     #rightside {
         width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
         flex-direction: column;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
     }
 
     #row1 {
         width: 500px; /* The width is 100%, when the viewport is 800px or smaller */
         flex-direction: column;
+        flex-wrap: wrap;
     }
 
     #row2 {
         width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
         flex-direction: column;
+        flex-wrap: wrap;
     }
 
 }
