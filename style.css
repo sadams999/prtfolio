@@ -238,7 +238,7 @@ body{
 
 @media screen and (max-width: 2000px) {
     #JUMBO {
-      margin-right: 100px;
+      margin-left: 100px;
     }
 
 }
