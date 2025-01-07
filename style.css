@@ -236,7 +236,7 @@ body{
     #JUMBO {
       width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
 
-@media screen and (max-width: 2000px) {
+@media screen and (max-width: 1600px) {
     #JUMBO {
       margin-left: 100px;
     }
