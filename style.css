@@ -240,6 +240,13 @@ body{
     #JUMBO {
       margin-left: 100px;
     }
+    .circle {
+        position: absolute;
+        width: 500px;
+        top: 320px;
+        left: 30px;
+    }
+
 
 }
 
