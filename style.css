@@ -13,9 +13,9 @@ body{
 }
 
 #JUMBO {
-    column-count: 2;
     display: flex;
-    gap: 0px; /* Adds 20px of space between flex items */
+    max-width: 1300px;
+    margin: 0 auto;
   }
   .flex-grid-thirds .col {
     width: 32%;
@@ -237,9 +237,6 @@ body{
       width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
 
 @media screen and (max-width: 1600px) {
-    #JUMBO {
-      margin-left: 100px;
-    }
     .circle {
         position: absolute;
         width: 500px;
