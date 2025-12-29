@@ -13,6 +13,9 @@ body{
     margin-top: 60px;
 }
 
+a {
+  color: black;
+
 #JUMBO {
     display: flex;
     max-width: 1300px;
