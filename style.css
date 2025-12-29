@@ -7,7 +7,7 @@
     font-family: interbold;
     src: url(Inter_24pt-Bold.ttf);
   }
-  
+
 body{
     background-color: #F5F4F0;
     margin-top: 60px;
@@ -154,7 +154,7 @@ a {
     justify-content: center;
     gap: 30px; /* Adds 20px of space between flex items */
     align-items: center;
-    
+
 
 }
 
@@ -166,9 +166,9 @@ a {
     justify-content: center;
     gap: 30px; /* Adds 20px of space between flex items */
     align-items: center;
-    
+
 }
-    
+
 .pblock {
     background-color: #adadad;
     height: 220px;
@@ -209,7 +209,7 @@ a {
     opacity: 1;
   }
 
-  
+
 .pblock img {
     object-fit: cover;
     overflow: hidden;
@@ -234,7 +234,14 @@ a {
     70% {
         transform: rotate(5deg);
     }
+}*/
+
+#floaty {
+    color: black;
+    position: absolute;
 }
+
+
 
 
 /*@media screen and (max-width: 800px) {
@@ -267,7 +274,7 @@ a {
       width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
       flex-direction: column;
       align-items: center;
-      
+
     }
 
     #rightside {
