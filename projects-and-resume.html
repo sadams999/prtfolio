@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soncera Adams — Projects, Websites & Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F3EFE5;
+    --white:#FFFFFF;
+    --ink:#1C1B19;
+    --muted:#6B675F;
+    --purple:#7C71C9;
+    --purple-deep:#5B4FBE;
+    --line:#E2DBC9;
+    --dark:#131019;
+    --dark-2:#1D1926;
+    --radius:18px;
+    --shadow:0 10px 30px rgba(28,27,25,0.08);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+  }
+  h1,h2,h3{
+    font-family:'Poppins',sans-serif;
+    margin:0;
+  }
+  .mono{
+    font-family:'JetBrains Mono',monospace;
+  }
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:64px 32px 0;
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    max-width:1180px;
+    margin:0 auto;
+    padding:56px 32px 80px;
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:32px;
+    flex-wrap:wrap;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-left h1{
+    font-size:52px;
+    font-weight:800;
+    letter-spacing:-0.01em;
+    line-height:1.05;
+  }
+  .hero-left h1 .hi{ color:var(--muted); font-weight:600; }
+  .hero-left h1 .name{ color:var(--purple-deep); }
+  .hero-left p{
+    margin:16px 0 0;
+    color:var(--muted);
+    font-size:15.5px;
+    max-width:440px;
+    line-height:1.6;
+  }
+  .hero-nav{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    transition:top .2s ease, right .2s ease;
+  }
+  .hero-nav.docked{
+    position:fixed;
+    top:18px;
+    right:32px;
+    flex-direction:row;
+    gap:8px;
+    background:rgba(243,239,229,0.9);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    padding:8px;
+    border-radius:999px;
+    box-shadow:var(--shadow);
+    z-index:40;
+  }
+  .hero-nav button{
+    font-family:'JetBrains Mono',monospace;
+    font-size:14px;
+    color:var(--ink);
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:10px 18px;
+    border:1.5px solid var(--line);
+    border-radius:999px;
+    background:var(--white);
+    cursor:pointer;
+    transition:border-color .15s ease, transform .15s ease;
+  }
+  .hero-nav button:hover{
+    border-color:var(--purple);
+    transform:translateX(3px);
+  }
+  .hero-nav button::before{ content:">"; color:var(--purple); }
+  @media (max-width:640px){
+    .hero-left h1{ font-size:36px; }
+    .hero{ padding:40px 18px 56px; }
+    .hero-nav.docked{ top:12px; right:12px; padding:6px; }
+    .hero-nav.docked button{ padding:8px 12px; font-size:12.5px; }
+  }
+  /* ---------- section headers ---------- */
+  .section-head{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:24px;
+    margin-bottom:32px;
+    flex-wrap:wrap;
+  }
+  .eyebrow{
+    font-size:13px;
+    color:var(--purple-deep);
+    letter-spacing:0.04em;
+    display:block;
+    margin-bottom:8px;
+  }
+  .section-head h2{
+    font-size:34px;
+    font-weight:800;
+    letter-spacing:-0.01em;
+  }
+  .section-sub{
+    color:var(--muted);
+    font-size:15px;
+    max-width:420px;
+    margin:0;
+  }
+  section{
+    padding-bottom:96px;
+  }
+
+  /* ---------- filter chips ---------- */
+  .filters{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:28px;
+  }
+  .chip{
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;
+    padding:9px 16px;
+    border-radius:999px;
+    border:1.5px solid var(--line);
+    background:var(--white);
+    color:var(--ink);
+    cursor:pointer;
+    transition:all .15s ease;
+  }
+  .chip:hover{ border-color:var(--purple); }
+  .chip.active{
+    background:var(--ink);
+    border-color:var(--ink);
+    color:var(--cream);
+  }
+  .chip::before{ content:"> "; color:var(--purple); }
+  .chip.active::before{ color:var(--purple); }
+
+  /* ---------- project grid ---------- */
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+  }
+  .card{
+    background:var(--white);
+    border-radius:var(--radius);
+    overflow:hidden;
+    cursor:pointer;
+    box-shadow:var(--shadow);
+    border:1px solid var(--line);
+    transition:transform .18s ease, box-shadow .18s ease;
+    display:flex;
+    flex-direction:column;
+  }
+  .card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 16px 36px rgba(28,27,25,0.14);
+  }
+  .card-media{
+    height:160px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:rgba(255,255,255,0.85);
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    letter-spacing:.03em;
+    text-align:center;
+    padding:12px;
+  }
+  .card-body{
+    padding:20px 20px 22px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    flex:1;
+  }
+  .card-body h3{
+    font-size:17px;
+    font-weight:700;
+  }
+  .card-body p{
+    margin:0;
+    font-size:13.5px;
+    color:var(--muted);
+    line-height:1.5;
+    flex:1;
+  }
+  .tags{
+    display:flex;
+    gap:6px;
+    flex-wrap:wrap;
+  }
+  .tag{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    background:var(--cream);
+    border:1px solid var(--line);
+    padding:3px 8px;
+    border-radius:6px;
+    color:var(--muted);
+  }
+  .card-link{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12.5px;
+    color:var(--purple-deep);
+    font-weight:600;
+  }
+  .add-card{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:2px dashed var(--line);
+    border-radius:var(--radius);
+    min-height:280px;
+    color:var(--muted);
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;
+    text-align:center;
+    padding:20px;
+    background:transparent;
+    box-shadow:none;
+  }
+
+  /* ---------- modal ---------- */
+  .overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(19,16,25,0.55);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:50;
+    padding:24px;
+  }
+  .overlay.open{ display:flex; }
+  .modal{
+    background:var(--white);
+    border-radius:22px;
+    max-width:640px;
+    width:100%;
+    max-height:86vh;
+    overflow-y:auto;
+    padding:0 0 28px;
+  }
+  .modal-media{
+    height:220px;
+    border-radius:22px 22px 0 0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:rgba(255,255,255,0.85);
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+  }
+  .modal-body{ padding:26px 30px 0; }
+  .modal-body h3{ font-size:22px; margin-bottom:10px; }
+  .modal-body p{ color:var(--muted); font-size:14.5px; line-height:1.65; }
+  .modal-close{
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;
+    color:var(--muted);
+    background:none;
+    border:none;
+    cursor:pointer;
+    padding:20px 30px 0;
+    display:block;
+  }
+  .modal-close:hover{ color:var(--ink); }
+
+  /* ---------- website showcase ---------- */
+  .site-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:24px;
+  }
+  .browser{
+    border-radius:14px;
+    overflow:hidden;
+    background:var(--white);
+    border:1px solid var(--line);
+    box-shadow:var(--shadow);
+  }
+  .browser-bar{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:10px 14px;
+    background:#EDE8DA;
+    border-bottom:1px solid var(--line);
+  }
+  .dot{ width:9px; height:9px; border-radius:50%; }
+  .dot.r{ background:#E4796B; }
+  .dot.y{ background:#E8C468; }
+  .dot.g{ background:#8FBF7F; }
+  .browser-url{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11.5px;
+    color:var(--muted);
+    background:var(--white);
+    border-radius:6px;
+    padding:4px 10px;
+    flex:1;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+  }
+  .browser-frame-wrap{
+    position:relative;
+    height:280px;
+    background:#EAE5D7;
+  }
+  .browser-frame-wrap iframe{
+    width:100%;
+    height:100%;
+    border:0;
+    display:block;
+  }
+  .placeholder-preview{
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    color:var(--white);
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    text-align:center;
+    padding:16px;
+  }
+  .site-info{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 18px;
+    gap:12px;
+  }
+  .site-info h3{ font-size:15.5px; }
+  .site-info p{ margin:2px 0 0; font-size:12.5px; color:var(--muted); }
+  .visit{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    color:var(--purple-deep);
+    font-weight:600;
+    white-space:nowrap;
+    text-decoration:none;
+  }
+
+  /* ---------- resume ---------- */
+  .resume-panel{
+    display:grid;
+    grid-template-columns:1.1fr 1.4fr;
+    gap:28px;
+    background:var(--white);
+    border-radius:var(--radius);
+    border:1px solid var(--line);
+    box-shadow:var(--shadow);
+    padding:30px;
+  }
+  .resume-copy p{
+    color:var(--muted);
+    font-size:14.5px;
+    line-height:1.65;
+  }
+  .resume-actions{
+    display:flex;
+    gap:12px;
+    margin-top:18px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;
+    font-weight:600;
+    padding:12px 18px;
+    border-radius:10px;
+    border:1.5px solid var(--ink);
+    background:var(--ink);
+    color:var(--cream);
+    cursor:pointer;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+  }
+  .btn.outline{
+    background:transparent;
+    color:var(--ink);
+  }
+  .resume-viewer{
+    border-radius:12px;
+    overflow:hidden;
+    border:1px solid var(--line);
+    background:var(--cream);
+    min-height:360px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .resume-viewer iframe{
+    width:100%;
+    height:420px;
+    border:0;
+  }
+  .resume-missing{
+    text-align:center;
+    padding:30px;
+    color:var(--muted);
+    font-size:13.5px;
+  }
+  .resume-missing .mono{ display:block; margin-top:8px; color:var(--purple-deep); }
+
+  @media (max-width:860px){
+    .grid{ grid-template-columns:repeat(2,1fr); }
+    .site-grid{ grid-template-columns:1fr; }
+    .resume-panel{ grid-template-columns:1fr; }
+  }
+  @media (max-width:560px){
+    .grid{ grid-template-columns:1fr; }
+    .wrap{ padding:48px 18px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero" id="top">
+  <div class="hero-left">
+    <h1><span class="hi">Hello,</span><br>I'm <span class="name">Soncera Adams</span></h1>
+    <p>Computational Media student focused on Interaction Design and Software Development. Below: selected projects, websites I've designed, and my resume.</p>
+  </div>
+  <nav class="hero-nav">
+    <button type="button" data-target="projects">projects</button>
+    <button type="button" data-target="websites">websites</button>
+    <button type="button" data-target="resume">resume</button>
+  </nav>
+</header>
+
+<div class="wrap">
+
+  <!-- ============ PROJECTS ============ -->
+  <section id="projects">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow mono">&gt; selected work</span>
+        <h2>Projects</h2>
+      </div>
+      <p class="section-sub">Filter by type, click any card for details. Add new work by editing the <span class="mono">projects</span> array in the script — no HTML copy-pasting needed.</p>
+    </div>
+
+    <div class="filters" id="filters"></div>
+    <div class="grid" id="projectGrid"></div>
+  </section>
+
+  <!-- ============ WEBSITES ============ -->
+  <section id="websites">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow mono">&gt; on the web</span>
+        <h2>Websites I've designed</h2>
+      </div>
+      <p class="section-sub">Live previews of sites I built or helped design. Add a URL and it renders live; leave it blank and a placeholder shows instead.</p>
+    </div>
+    <div class="site-grid" id="siteGrid"></div>
+  </section>
+
+  <!-- ============ RESUME ============ -->
+  <section id="resume">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow mono">&gt; cv</span>
+        <h2>Resume</h2>
+      </div>
+    </div>
+
+    <div class="resume-panel">
+      <div class="resume-copy">
+        <h3 style="font-size:19px;margin-bottom:10px;">Computational Media — Interaction Design &amp; Software Development</h3>
+        <p>The panel on the right previews <span class="mono">resume.pdf</span> directly on the page, so visitors don't have to download a file just to skim it.</p>
+        <p>To activate it: place a file named exactly <span class="mono">resume.pdf</span> in the same folder as this page, then reload.</p>
+        <div class="resume-actions">
+          <a class="btn" id="downloadBtn" href="resume.pdf" download>&gt; download PDF</a>
+          <a class="btn outline" id="openBtn" href="resume.pdf" target="_blank" rel="noopener">&gt; open in new tab</a>
+        </div>
+      </div>
+      <div class="resume-viewer" id="resumeViewer">
+        <div class="resume-missing">
+          Resume preview will appear here.
+          <span class="mono">drop resume.pdf into this folder &gt;</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ============ MODAL ============ -->
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <button class="modal-close" id="modalClose">&lt; back</button>
+    <div class="modal-media" id="modalMedia"></div>
+    <div class="modal-body">
+      <h3 id="modalTitle"></h3>
+      <div class="tags" id="modalTags" style="margin-bottom:14px;"></div>
+      <p id="modalDesc"></p>
+      <p><a id="modalLink" class="card-link" href="#" target="_blank" rel="noopener" style="display:none;">&gt; view live project</a></p>
+    </div>
+  </div>
+</div>
+
+<script>
+/* =========================================================
+   EDIT ME: add a project by adding one object to this array.
+   gradient: any two hex colors for the placeholder thumbnail
+   (used until you swap in a real screenshot — see note below)
+   ========================================================= */
+const projects = [
+  {
+    title: "Name's Notion",
+    category: "web design",
+    tags: ["notion", "widget", "javascript"],
+    gradient: ["#EDE7F6","#C7BEEA"],
+    desc: "A theme-generating personal Notion dashboard with a custom widget for tracking schedules, motivational quotes, and saved media, built to make a default Notion workspace feel personal.",
+    link: ""
+  },
+  {
+    title: "Vyse — LoL agent concept",
+    category: "game dev",
+    tags: ["character design", "narrative", "ui"],
+    gradient: ["#1D1926","#3E2E7A"],
+    desc: "A concept pitch for a League of Legends-style agent, exploring kit design, lore, and a stylized announcer-screen UI treatment.",
+    link: ""
+  },
+  {
+    title: "Ex-bounty hunter — interactive fiction",
+    category: "game dev",
+    tags: ["narrative design", "godot", "pixel ui"],
+    gradient: ["#0B0F1A","#123B3B"],
+    desc: "A branching interactive fiction game about an ex-bounty hunter searching for a long-lost sister, with a terminal-style dialogue box and neon cyberpunk backdrop.",
+    link: ""
+  },
+  {
+    title: "Storytime Chat",
+    category: "ai / tools",
+    tags: ["ai", "chatbot", "creative writing"],
+    gradient: ["#FBEFE3","#F0C9A5"],
+    desc: "An AI chatbot companion for a serialized romance story, letting readers ask about missing details or characters as they read.",
+    link: ""
+  }
+];
+
+/* =========================================================
+   EDIT ME: add a website by adding one object here.
+   url: leave "" to show a placeholder instead of a live embed
+   ========================================================= */
+const sites = [
+  {
+    name: "Client site — example",
+    url: "",
+    desc: "Add a live URL to preview this site inline."
+  },
+  {
+    name: "Client site — example",
+    url: "",
+    desc: "Add a live URL to preview this site inline."
+  }
+];
+
+const grid = document.getElementById('projectGrid');
+const filtersEl = document.getElementById('filters');
+const overlay = document.getElementById('overlay');
+
+function gradCSS(g){ return `linear-gradient(135deg, ${g[0]}, ${g[1]})`; }
+
+function renderProjects(list){
+  grid.innerHTML = '';
+  list.forEach((p, i) => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <div class="card-media" style="background:${gradCSS(p.gradient)}">project screenshot</div>
+      <div class="card-body">
+        <h3>${p.title}</h3>
+        <p>${p.desc.slice(0,90)}${p.desc.length>90?'…':''}</p>
+        <div class="tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+        <span class="card-link">&gt; view details</span>
+      </div>`;
+    card.addEventListener('click', () => openModal(p));
+    grid.appendChild(card);
+  });
+  const addCard = document.createElement('div');
+  addCard.className = 'add-card';
+  addCard.textContent = '+ add another project in the script';
+  grid.appendChild(addCard);
+}
+
+function buildFilters(){
+  const cats = ['all', ...new Set(projects.map(p=>p.category))];
+  filtersEl.innerHTML = '';
+  cats.forEach(cat => {
+    const chip = document.createElement('button');
+    chip.className = 'chip' + (cat==='all' ? ' active' : '');
+    chip.textContent = cat;
+    chip.addEventListener('click', () => {
+      document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+      chip.classList.add('active');
+      renderProjects(cat==='all' ? projects : projects.filter(p=>p.category===cat));
+    });
+    filtersEl.appendChild(chip);
+  });
+}
+
+function openModal(p){
+  document.getElementById('modalMedia').style.background = gradCSS(p.gradient);
+  document.getElementById('modalMedia').textContent = 'project screenshot';
+  document.getElementById('modalTitle').textContent = p.title;
+  document.getElementById('modalDesc').textContent = p.desc;
+  document.getElementById('modalTags').innerHTML = p.tags.map(t=>`<span class="tag">${t}</span>`).join('');
+  const linkEl = document.getElementById('modalLink');
+  if(p.link){ linkEl.style.display='inline'; linkEl.href=p.link; } else { linkEl.style.display='none'; }
+  overlay.classList.add('open');
+}
+document.getElementById('modalClose').addEventListener('click', ()=>overlay.classList.remove('open'));
+overlay.addEventListener('click', e => { if(e.target===overlay) overlay.classList.remove('open'); });
+
+buildFilters();
+renderProjects(projects);
+
+/* ---------- hero nav: scroll to section, not a link jump ---------- */
+document.querySelectorAll('.hero-nav button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.getElementById(btn.dataset.target).scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
+/* ---------- hero nav: dock to top of screen once hero scrolls away ---------- */
+const heroEl = document.getElementById('top');
+const heroNavEl = document.querySelector('.hero-nav');
+const heroObserver = new IntersectionObserver(
+  ([entry]) => { heroNavEl.classList.toggle('docked', !entry.isIntersecting); },
+  { threshold: 0, rootMargin: '-40px 0px 0px 0px' }
+);
+heroObserver.observe(heroEl);
+
+/* ---------- websites ---------- */
+const siteGrid = document.getElementById('siteGrid');
+sites.forEach(s => {
+  const el = document.createElement('div');
+  el.className = 'browser';
+  const previewHTML = s.url
+    ? `<div class="browser-frame-wrap"><iframe src="${s.url}" loading="lazy"></iframe></div>`
+    : `<div class="browser-frame-wrap"><div class="placeholder-preview" style="background:${gradCSS(['#3E2E7A','#7C71C9'])}">no url set yet<br>&gt; add s.url in the script</div></div>`;
+  el.innerHTML = `
+    <div class="browser-bar">
+      <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+      <span class="browser-url">${s.url || 'example.com'}</span>
+    </div>
+    ${previewHTML}
+    <div class="site-info">
+      <div>
+        <h3>${s.name}</h3>
+        <p>${s.desc}</p>
+      </div>
+      ${s.url ? `<a class="visit" href="${s.url}" target="_blank" rel="noopener">&gt; visit</a>` : ''}
+    </div>`;
+  siteGrid.appendChild(el);
+});
+
+/* ---------- resume: only wire up the embed if resume.pdf actually loads ---------- */
+fetch('resume.pdf', { method:'HEAD' }).then(res => {
+  if(res.ok){
+    document.getElementById('resumeViewer').innerHTML = `<iframe src="resume.pdf"></iframe>`;
+  }
+}).catch(()=>{ /* resume.pdf not present yet — placeholder stays */ });
+</script>
+
+</body>
+</html>
