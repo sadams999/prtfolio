@@ -4,6 +4,36 @@
     <script src="script.js"></script>
     <link rel="stylesheet" href="notion.css">
 <body>
+    <a href="index.html" class="back-home-btn">&lt; back to portfolio</a>
+
+<style>
+  .back-home-btn{
+    position:fixed;
+    top:18px;
+    left:18px;
+    z-index:999;
+    font-family:'JetBrains Mono', 'Courier New', monospace;
+    font-size:13px;
+    font-weight:600;
+    color:#1C1B19;
+    text-decoration:none;
+    background:rgba(243,239,229,0.92);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    border:1.5px solid #E2DBC9;
+    padding:9px 16px;
+    border-radius:999px;
+    box-shadow:0 6px 18px rgba(28,27,25,0.12);
+    transition:border-color .15s ease, transform .15s ease;
+  }
+  .back-home-btn:hover{
+    border-color:#7C71C9;
+    transform:translateX(-3px);
+  }
+  @media (max-width:640px){
+    .back-home-btn{ top:12px; left:12px; padding:7px 12px; font-size:12px; }
+  }
+</style>
 
 <div id="bgDiv">
 
