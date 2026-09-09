@@ -48,6 +48,7 @@ function preload() {
 
 /* SETUP RUNS ONCE */
 function setup() {
+  document.getElementById("loading").style.display = "none";
   textFont(myFont)
   createCanvas(800, 800);
 
