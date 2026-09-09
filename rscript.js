@@ -31,7 +31,7 @@ let screen = 0;
 /*preload files*/
 function preload() {
   bg1Image = loadImage("assets/exposition.png");
-  myFont = loadFont('VT323-Regular[1].ttf');
+  myFont = loadFont("assets/VT323-Regular[1].ttf");
   bg2Image = loadImage("assets/choice_1__scrn1.png");
   bg3Image = loadImage("assets/screen2.png");
   bg4Image = loadImage("assets/screen_4.png");
