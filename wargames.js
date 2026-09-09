@@ -73,10 +73,10 @@ function preload() {
   introScreen = loadImage("data/introscreen.png");
   missonControlScreen = loadImage("data/missioncontrol.png");
   consoleScreen = loadImage("data/consolescreen.png");
-  sec1 = loadImage("data/sec1.PNG");
-  sec2 = loadImage("data/sec2.PNG");
+  sec1 = loadImage("data/sec1.png");
+  sec2 = loadImage("data/sec2.png");
   sec2_2 = loadImage("data/sec3_2.jpg");
-  sec3 = loadImage("data/sec3.PNG");
+  sec3 = loadImage("data/sec3.png");
   sec3_2 = loadImage("data/sec3_2.jpg");
 
   // misc pngs
