@@ -308,6 +308,9 @@ function draw() {
   if (playButton.mouse.presses()){
     userStartAudio();
     screen = 1;
+    introVid.show();
+    introVid.play().catch(err => console.error('introVid play blocked:', err));
+    introPlayed = true;
   }
   if (screen == 1){
     // remove previous buttons
@@ -317,12 +320,6 @@ function draw() {
     introVid.show();
     introVid.position(width / 2 - 595, height / 2 - 150);
     image(introScreen, width/2, height/2, 1000, 500);
-
-
-    if (!introPlayed) {
-      introVid.play();
-      introPlayed = true;
-    }
 
     // define box
     let boxW = 1000;
