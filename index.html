@@ -697,10 +697,11 @@ const siteGrid = document.getElementById('siteGrid');
 sites.forEach(s => {
   const el = document.createElement('div');
   el.className = 'browser';
-  const previewHTML = s.url
+  const previewHTML = s.image
+    ? `<div class="browser-frame-wrap"><img src="${s.image}" alt="${s.name} screenshot" style="width:100%;height:100%;object-fit:cover;display:block;"></div>`
+    : s.url
     ? `<div class="browser-frame-wrap"><iframe src="${s.url}" loading="lazy"></iframe></div>`
     : `<div class="browser-frame-wrap"><div class="placeholder-preview" style="background:${gradCSS(['#3E2E7A','#7C71C9'])}">no url set yet<br>&gt; add s.url in the script</div></div>`;
-  el.innerHTML = `
     <div class="browser-bar">
       <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
       <span class="browser-url">${s.url || 'example.com'}</span>
