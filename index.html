@@ -702,6 +702,7 @@ sites.forEach(s => {
     : s.url
     ? `<div class="browser-frame-wrap"><iframe src="${s.url}" loading="lazy"></iframe></div>`
     : `<div class="browser-frame-wrap"><div class="placeholder-preview" style="background:${gradCSS(['#3E2E7A','#7C71C9'])}">no url set yet<br>&gt; add s.url in the script</div></div>`;
+  el.innerHTML = `
     <div class="browser-bar">
       <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
       <span class="browser-url">${s.url || 'example.com'}</span>
