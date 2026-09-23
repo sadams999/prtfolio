@@ -618,6 +618,9 @@ const filtersEl = document.getElementById('filters');
 const overlay = document.getElementById('overlay');
 
 function gradCSS(g){ return `linear-gradient(135deg, ${g[0]}, ${g[1]})`; }
+function mediaCSS(p){
+  return p.image ? `url('${p.image}') center/cover no-repeat` : gradCSS(p.gradient);
+}
 
 function renderProjects(list){
   grid.innerHTML = '';
@@ -625,8 +628,7 @@ function renderProjects(list){
     const card = document.createElement('div');
     card.className = 'card';
     card.innerHTML = `
-      <div class="card-media" style="background:${gradCSS(p.gradient)}">project screenshot</div>
-      <div class="card-body">
+        <div class="card-media" style="background:${mediaCSS(p)}">${p.image ? '' : 'project screenshot'}</div>      <div class="card-body">
         <h3>${p.title}</h3>
         <p>${p.desc.slice(0,90)}${p.desc.length>90?'…':''}</p>
         <div class="tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
@@ -658,8 +660,8 @@ function buildFilters(){
 }
 
 function openModal(p){
-  document.getElementById('modalMedia').style.background = gradCSS(p.gradient);
-  document.getElementById('modalMedia').textContent = 'project screenshot';
+  document.getElementById('modalMedia').style.background = mediaCSS(p);
+  document.getElementById('modalMedia').textContent = p.image ? '' : 'project screenshot';
   document.getElementById('modalTitle').textContent = p.title;
   document.getElementById('modalDesc').textContent = p.desc;
   document.getElementById('modalTags').innerHTML = p.tags.map(t=>`<span class="tag">${t}</span>`).join('');
