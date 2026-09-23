@@ -309,7 +309,7 @@ function draw() {
     userStartAudio();
     screen = 1;
     introVid.show();
-    introVid.elt.play().catch(err => console.error('introVid play blocked:', err));
+    introVid.play();
     introPlayed = true;
   }
   if (screen == 1){
