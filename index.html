@@ -663,10 +663,6 @@ function renderProjects(list){
     card.addEventListener('click', () => openModal(p));
     grid.appendChild(card);
   });
-  const addCard = document.createElement('div');
-  addCard.className = 'add-card';
-  addCard.textContent = '+ add another project in the script';
-  grid.appendChild(addCard);
 }
 
 function buildFilters(){
